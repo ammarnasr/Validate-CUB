@@ -127,7 +127,7 @@ def get_inception_score(sess, images, pred_op):
         kl = np.mean(np.sum(kl, 1))
         scores.append(np.exp(kl))
     print('mean:', "%.2f" % np.mean(scores), 'std:', "%.2f" % np.std(scores))
-    printmd('Mean Inception Score : ' + np.mean(scores).string)
+    printmd('Mean Inception Score : ' + str((np.mean(scores)).item()) )
     return np.mean(scores), np.std(scores)
 
 
