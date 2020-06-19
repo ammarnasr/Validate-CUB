@@ -28,6 +28,9 @@ import tensorflow as tf
 import math
 import os.path
 import scipy.misc
+
+from IPython.display import Image as Iamge_ipy
+from IPython.display import display
 # import time
 # import scipy.io as sio
 # from datetime import datetime
