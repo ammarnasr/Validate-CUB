@@ -96,6 +96,7 @@ def get_inception_score(sess, images, pred_op):
     indices = list(np.arange(num_examples))
     np.random.shuffle(indices)
     for i in range(n_batches):
+        print ('batch :', i, ' of :', n_batches)
         inp = []
         # print('i*bs', i*bs)
         for j in range(bs):
@@ -117,6 +118,7 @@ def get_inception_score(sess, images, pred_op):
     preds = np.concatenate(preds, 0)
     scores = []
     for i in range(splits):
+        print ('split :', i, ' of :', splits)
         istart = i * preds.shape[0] // splits
         iend = (i + 1) * preds.shape[0] // splits
         part = preds[istart:iend, :]
