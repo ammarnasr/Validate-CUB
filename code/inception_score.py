@@ -65,6 +65,8 @@ MOVING_AVERAGE_DECAY = 0.9999
 fullpath = FLAGS.image_folder
 print(fullpath)
 
+def printmd(string):
+    display(Markdown(string))
 
 def preprocess(img):
     # print('img', img.shape, img.max(), img.min())
@@ -123,6 +125,7 @@ def get_inception_score(sess, images, pred_op):
         kl = np.mean(np.sum(kl, 1))
         scores.append(np.exp(kl))
     print('mean:', "%.2f" % np.mean(scores), 'std:', "%.2f" % np.std(scores))
+    printmd('Mean Inception Score : '+ np.mean(scores))
     return np.mean(scores), np.std(scores)
 
 
