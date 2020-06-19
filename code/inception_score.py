@@ -53,7 +53,7 @@ tf.app.flags.DEFINE_integer('num_classes', 50,      # 20 for flowers
 tf.app.flags.DEFINE_integer('splits', 10,
                             """Number of splits """)
 tf.app.flags.DEFINE_integer('batch_size', 64, "batch size")
-tf.app.flags.DEFINE_integer('gpu', 1, "The ID of GPU to use")
+tf.app.flags.DEFINE_integer('gpu', 0, "The ID of GPU to use")
 # Batch normalization. Constant governing the exponential moving average of
 # the 'global' mean and variance for all activations.
 BATCHNORM_MOVING_AVERAGE_DECAY = 0.9997
