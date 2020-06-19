@@ -358,7 +358,7 @@ def build_super_images2(real_imgs, captions, cap_lens, ixtoword,
             merged.paste(PIL_att, (0, 0), mask)
             merged = np.array(merged)[:, :, :3]
 
-            row.append(np.concatenate([one_map, middle_pad], 1))
+            row.append(np.concatenate([one_map[:,:,:3], middle_pad], 1))
             #
             row_merge.append(np.concatenate([merged, middle_pad], 1))
             #
