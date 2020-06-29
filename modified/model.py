@@ -372,8 +372,12 @@ class NEXT_STAGE_G(nn.Module):
             att1: batch x sourceL x queryL
         """
         self.att.applyMask(mask)
-        c_code, att = self.att(h_code, word_embs)
+        #newLine c_code, att = self.att(h_code, word_embs)
+        c_code, weightedSentence, att, sent_att = self.att(h_code, c_code, word_embs)
         h_c_code = torch.cat((h_code, c_code), 1)
+        #newLine 2
+        h_c_sent_code = torch.cat((h_c_code, weightedSentence), 1)
+        h_c_sent_code = self.conv(h_c_sent_code)
         out_code = self.residual(h_c_code)
 
         # state size ngf/2 x 2in_size x 2in_size
