@@ -381,7 +381,7 @@ class condGANTrainer(object):
             print("-----------------netG------------------------")
             print(netG)
             print("--------------state-dict---------------------")
-            print(state_dict)
+            #print(state_dict)
             netG.load_state_dict(state_dict)
             print('Load G from: ', model_dir)
             print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
