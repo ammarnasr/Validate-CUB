@@ -377,6 +377,11 @@ class condGANTrainer(object):
             state_dict = \
                 torch.load(model_dir, map_location=lambda storage, loc: storage)
             # state_dict = torch.load(cfg.TRAIN.NET_G)
+            print("LINE==380")
+            print("-----------------netG------------------------")
+            print(netG)
+            print("--------------state-dict---------------------")
+            print(state_dict)
             netG.load_state_dict(state_dict)
             print('Load G from: ', model_dir)
             print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
