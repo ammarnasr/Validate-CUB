@@ -349,6 +349,8 @@ class NEXT_STAGE_G(nn.Module):
         self.cf_dim = ncf
         self.num_residual = cfg.GAN.R_NUM
         self.define_module()
+        #newLine
+        self.conv = conv1x1(ngf * 3, ngf * 2)
 
     def _make_layer(self, block, channel_num):
         layers = []
