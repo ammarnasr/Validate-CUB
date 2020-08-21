@@ -349,6 +349,20 @@ class condGANTrainer(object):
         if cfg.TRAIN.NET_G == '':
             print('Error: the path for morels is not found!')
         else:
+            netG_list = [
+                '../models/netG_epoch_50.pth',
+                '../models/netG_epoch_60.pth',
+                '../models/netG_epoch_70.pth',
+                '../models/netG_epoch_80.pth',
+                '../models/netG_epoch_90.pth',
+                '../models/netG_epoch_100.pth',
+                '../models/netG_epoch_110.pth',
+                '../models/netG_epoch_120.pth',
+                '../models/netG_epoch_130.pth',
+                '../models/netG_epoch_140.pth',
+                '../models/netG_epoch_150.pth',
+                '../models/netG_epoch_160.pth'
+            ]
             if split_dir == 'test':
                 split_dir = 'valid'
             # Build and load the generator
